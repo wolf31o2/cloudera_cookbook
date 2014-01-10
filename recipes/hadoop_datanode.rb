@@ -48,6 +48,7 @@ node[:hadoop][:hdfs_site]['dfs.data.dir'].split(',').each do |dir|
     owner "hdfs"
     group "hdfs"
     action :create
+    recursive :true
   end
 
   directory "#{dir}/lost+found" do
